@@ -25,12 +25,12 @@ public class Sphere implements AbstractProblem{
 		Point p = new Point(0,0);
 		Robot robot = new Robot(p);
 		double teneur = sphere.collecteDonnee(robot);
-		System.out.println("Teneur en minerai à la position : ("+robot.getP().getX()+" : "+robot.getP().getX()+") = "+teneur);
+		System.out.println("Teneur en minerai à la position : ("+robot.getP().getX()+" : "+robot.getP().getY()+") = "+teneur);
 		
 		Point p1 = new Point(0.5,0.5);
 		Robot robot1 = new Robot(p1);
 		double teneur1 = sphere.collecteDonnee(robot1);
-		System.out.println("Teneur en minerai à la position : ("+robot1.getP().getX()+" : "+robot1.getP().getX()+") = "+teneur1);
+		System.out.println("Teneur en minerai à la position : ("+robot1.getP().getX()+" : "+robot1.getP().getY()+") = "+teneur1);
 
 	}
 }
