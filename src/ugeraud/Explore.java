@@ -41,9 +41,6 @@ public class Explore implements Behavior{
 		double Xp = robot.getP().getX() + x;
 		double Yp = robot.getP().getY() + y;
 		
-		// définit la position locale du robot
-		robot.setL(robot.getP());
-		
 		Point p = new Point(Xp,Yp);
 		
 		// calcul de la nouvelle position après déplacement du robot
@@ -89,7 +86,6 @@ public class Explore implements Behavior{
 		for (int i=0;i<20;i++){
 			robot.marche();
 			System.out.println(i+" Position courante : "+robot.getP().getX()+" "+robot.getP().getY());
-			System.out.println(i+" Derniere position : "+robot.getL().getX()+" "+robot.getL().getY());
 		}
 	}
 

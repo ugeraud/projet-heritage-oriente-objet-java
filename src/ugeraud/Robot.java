@@ -12,9 +12,6 @@ public class Robot {
 	// position courante P
 	private Point P;
 		
-	// derniere position locale L
-	private Point L;
-		
 	// position où le robot a eu sa meilleure teneur en minerai
 	private Point bestPosition;
 		
@@ -43,7 +40,6 @@ public class Robot {
 		setTeneurCourante(0.0);
 		setBestTeneurObtenueParLeRobot(0.0);
 		setG(new Point(0.0,0.0));
-		setL(new Point(0.0,0.0));
 	}
 	
 	/**
@@ -67,22 +63,6 @@ public class Robot {
 	 */
 	public void setP(Point p) {
 		P = p;
-	}
-
-	/**
-	 * 
-	 * @return la dernière position locale du robot
-	 */
-	public Point getL() {
-		return L;
-	}
-	
-	/**
-	 * définit la position locale du robot
-	 * @param l
-	 */
-	public void setL(Point l) {
-		L = l;
 	}
 
 	/**
