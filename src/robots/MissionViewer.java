@@ -86,7 +86,7 @@ public class MissionViewer extends JPanel {
 	            JFrame frame = new JFrame("Mission Viewer");
 	            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	            frame.setLayout(new BorderLayout());
-	            frame.add(new MissionViewer("data/robots.txt",colored));
+	            frame.add(new MissionViewer("data/BasicMission.txt",colored));
 	            frame.pack();
 	            frame.setVisible(true);
 	        }
