@@ -9,11 +9,22 @@ package ugeraud;
  */
 public class Sphere implements AbstractProblem{
 
+	private final int max = 1;
+	
+	private final int min = 0;
+	
 	public Sphere() {}
 	
 	@Override
 	public double collecteDonnee(Robot robot) {
-		return (1 - (Math.pow(robot.getP().getX(), 2) + Math.pow(robot.getP().getY(), 2))/2);
+		double teneur = (1 - (Math.pow(robot.getP().getX(), 2) + Math.pow(robot.getP().getY(), 2))/2);
+		
+		// normalisation de la valeur de teneur en minerai calculé à la position (x,y)
+		if(teneur < min) teneur = min;
+				
+		if(teneur > max) teneur = max;
+				
+		return 255*teneur;
 	}
 
 	/**

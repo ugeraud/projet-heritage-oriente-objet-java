@@ -98,7 +98,8 @@ public class BasicMission {
 		printer.println("-1");
 		for (int i = 0; i < tableauDeRobots.length; i++) {
 			Robot robot = get(i);
-			printer.println(i+"\t"+robot.getP().getX()+"\t"+robot.getP().getY());
+			int codeCouleur = (int)robot.getTeneurCourante();
+			printer.println(codeCouleur+"\t"+robot.getP().getX()+"\t"+robot.getP().getY());
 		}
 	}
 	
@@ -109,7 +110,7 @@ public class BasicMission {
 		for (int iter=0;iter<100;iter++){
 			collecte();
 			enregistre();
-			System.out.println("iter="+iter+" "+Robot.getBestTeneurGlobale());
+			System.out.println("iter="+iter+" "+Robot.getBestTeneurGlobale()/255);
 			marche();
 		}
 		printer.close();
@@ -144,10 +145,10 @@ public class BasicMission {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Eggholder eggholder = new Eggholder();
-		BasicMission basicMission = new BasicMission(eggholder, 20);
+		Sphere sphere = new Sphere();
+		BasicMission basicMission = new BasicMission(sphere, 50);
 		basicMission.run();
-		MissionViewer.display();
+		MissionViewer.display(true);
 	}
 		
 }

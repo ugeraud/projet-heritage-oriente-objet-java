@@ -25,9 +25,9 @@ public class SmartMission extends BasicMission {
 		super(gisementConsidere, nombreRobot);
 		policy = new SimplePolicy(nombrePhase);
 		simplePolicy = new SimplePolicy(nombrePhase);
-		simplePolicy.add(new Explore(), 80);
-		simplePolicy.add(new Follow(), 60);
-		simplePolicy.add(new LocalBest(), 40);
+		simplePolicy.add(new Explore(), 200);
+		simplePolicy.add(new Follow(), 50);
+		simplePolicy.add(new LocalBest(), 50);
 	}
 	
 	
@@ -44,7 +44,7 @@ public class SmartMission extends BasicMission {
 				collecte();
 				enregistre();
 				marche();
-				double BestTeneurGlobale = Robot.getBestTeneurGlobale();
+				double BestTeneurGlobale = (Robot.getBestTeneurGlobale() - 8160/67)*134/17;
 				System.out.println(BestTeneurGlobale);
 			}
 		}
@@ -58,9 +58,9 @@ public class SmartMission extends BasicMission {
 	 */
 	public static void main(String[] args) {
 		Eggholder eggholder = new Eggholder();
-		SmartMission smartMission = new SmartMission(eggholder, 50,3);
+		SmartMission smartMission = new SmartMission(eggholder, 2000,3);
 		smartMission.run();
-		MissionViewer.display();
+		MissionViewer.display(true);
 	}
 
 }

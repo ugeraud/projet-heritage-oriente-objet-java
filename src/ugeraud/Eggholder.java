@@ -13,6 +13,10 @@ public class Eggholder implements AbstractProblem{
 	
 	private final double constante = 0.5;
 	
+	private final int max = 1050;
+	
+	private final int min = - 960;
+	
 	public Eggholder() {}
 	
 	
@@ -22,7 +26,14 @@ public class Eggholder implements AbstractProblem{
 		double y = k * (robot.getP().getY() - constante);
 		double r1 = Math.abs((x/2) + (y + 47));
 		double r2 = Math.abs(x - (y + 47));
-		return -(y + 47) * Math.sin(Math.sqrt(r1)) - x * Math.sin(Math.sqrt(r2));
+		double teneur = -(y + 47) * Math.sin(Math.sqrt(r1)) - x * Math.sin(Math.sqrt(r2));
+		
+		// normalisation de la valeur de teneur en minerai calculé à la position (x,y)
+		if(teneur < min) teneur = min;
+		
+		if(teneur > max) teneur = max;
+		
+		return (17*teneur)/134 + 8160/67;
 			
 	}
 	
