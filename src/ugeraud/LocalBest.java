@@ -13,7 +13,7 @@ public class LocalBest implements Behavior{
 	
 	@Override
 	public void deplacer(Robot robot) {
-		Point nouvellePosition = robot.getP().deplacer(robot.getBestPosition(), 0.02);
+		Point nouvellePosition = robot.getP().deplacer(robot.getBestPosition(), 0.05);
 		robot.setP(nouvellePosition);
 	}
 

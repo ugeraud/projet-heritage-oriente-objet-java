@@ -23,7 +23,7 @@ public class BasicMission {
 	
 	private Printer printer;
 	
-	private final String filename = "data/BasicMission.txt";
+	private final String filename = "data/SmartMission.txt";
 	
 	/**
 	 * 
@@ -62,8 +62,6 @@ public class BasicMission {
 		for (int i = 0; i < tableauDeRobots.length; i++) {
 			Point centre = new Point(0.5,0.5);
 			Robot robot = new Robot(centre);
-			Explore explore = new Explore();
-			robot.setBehavior(explore);
 			set(robot);
 		}
 	}

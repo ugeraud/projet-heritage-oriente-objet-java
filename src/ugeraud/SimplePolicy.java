@@ -4,7 +4,7 @@
 package ugeraud;
 
 /**
- * @author gerau
+ * @author geraud
  *
  */
 public class SimplePolicy extends AbstractPolicy{

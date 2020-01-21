@@ -25,14 +25,14 @@ public class SmartMission extends BasicMission {
 		super(gisementConsidere, nombreRobot);
 		policy = new SimplePolicy(nombrePhase);
 		simplePolicy = new SimplePolicy(nombrePhase);
-		simplePolicy.add(new LocalBest(), 60);
-		simplePolicy.add(new Explore(), 50);
-		simplePolicy.add(new Follow(), 20);
+		simplePolicy.add(new Explore(), 80);
+		simplePolicy.add(new Follow(), 60);
+		simplePolicy.add(new LocalBest(), 40);
 	}
 	
 	
 	/**
-	 * ordre de mission Explore() - Follow() - LocalBest() pour un temps de 60 - 50 - 20 
+	 * ordre de mission Explore() - Follow() - LocalBest() 
 	 */
 	public void run() {
 		for (int p = 0; p < policy.getNombreDePhase(); p++) {
@@ -40,7 +40,7 @@ public class SmartMission extends BasicMission {
 				Robot robot = get(i);
 				robot.setBehavior(simplePolicy.phase(p));
 			}
-			for (int j = 0; j < simplePolicy.dureePhase(p); j++) {
+			for (int i1 = 0; i1 < simplePolicy.dureePhase(p); i1++) {
 				collecte();
 				enregistre();
 				marche();
@@ -58,9 +58,9 @@ public class SmartMission extends BasicMission {
 	 */
 	public static void main(String[] args) {
 		Eggholder eggholder = new Eggholder();
-		SmartMission smartMission = new SmartMission(eggholder, 20,3);
+		SmartMission smartMission = new SmartMission(eggholder, 50,3);
 		smartMission.run();
-		MissionViewer.display(true);
+		MissionViewer.display();
 	}
 
 }

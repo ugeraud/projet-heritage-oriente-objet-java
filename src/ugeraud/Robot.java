@@ -40,6 +40,7 @@ public class Robot {
 		setTeneurCourante(0.0);
 		setBestTeneurObtenueParLeRobot(0.0);
 		setG(new Point(0.0,0.0));
+		setBehavior(new Explore());
 	}
 	
 	/**
